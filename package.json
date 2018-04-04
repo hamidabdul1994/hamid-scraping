@@ -1,0 +1,77 @@
+{
+  "name": "hamid-scraping",
+  "version": "0.0.0",
+  "description": "my sample scraping and task ",
+  "homepage": "",
+  "author": {
+    "name": "Hamid Raza noori <noorihamid1994@gmail.com>",
+    "email": "noorihamid994@gmail.com",
+    "url": "https://about.me/hamid.noori"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "keywords": [
+    "scraping",
+    "node-request"
+  ],
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "nsp": "^2.8.0",
+    "eslint": "^4.19.1",
+    "prettier": "^1.11.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.1.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-config-xo": "^0.20.1",
+    "jest": "^22.0.6"
+  },
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "scripts": {
+    "prepublishOnly": "nsp check",
+    "pretest": "eslint .",
+    "precommit": "lint-staged",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "xo",
+      "prettier"
+    ],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "printWidth": 90
+        }
+      ]
+    },
+    "plugins": [
+      "prettier"
+    ]
+  },
+  "repository": "hamidabdul1994/hamid-scraping",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "license": "MIT"
+}
